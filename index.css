@@ -97,6 +97,7 @@ input, button, textarea, select{
     gap: var(--gap, 1rem);
 }
 
+
 .grid{
     display: grid;
     gap: var(--gap, 1rem);
@@ -290,4 +291,30 @@ input, button, textarea, select{
 
 .dot-indicators > [aria-selected="true"] {
     background-color: hsl( var(--clr-white));
+}
+
+.number-indicators > * {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 2.5em;
+    margin-block: 1rem;
+    background-color: transparent;
+    
+    border: 1px solid hsl( var(--clr-light) / .25);
+    color: hsl( var(--clr-white) / .5 );
+
+    display: block;
+    margin-inline: auto;
+}
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+    background-color: transparent;
+    border-color: hsl( var(--clr-white) / .5);
+}
+
+.number-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white));
+    color: hsl( var(--clr-dark) );
 }
