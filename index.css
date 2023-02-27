@@ -101,6 +101,14 @@ input, button, textarea, select{
     display: grid;
     gap: var(--gap, 1rem);
 }
+ 
+/* select all that has a sibling before it*/
+/* same as: .flow > *:not(:first-child) */
+/* same as: .flow > * + * */
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+    outline: 1px solid red;
+}
 
 .container{
     padding-inline: 2em;
