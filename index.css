@@ -298,7 +298,18 @@ input, button, textarea, select{
     list-style: none;
     padding: 0;
     margin: 0;
+    background: hsl(var(--clr-white) / 0.95);
+    /* backdrop-filter: blur(1.5rem); */
 }
+
+
+@supports (backdrop-filter: blur(1.5rem)) {
+    .primary-navigation{
+        background: hsl(var(--clr-white) / 0.05);
+        backdrop-filter: blur(1.5rem);
+    }
+}
+
 
 @media (max-width: 35rem) {
     .primary-navigation {
@@ -307,7 +318,6 @@ input, button, textarea, select{
         z-index: 1000;
         /*short for top bottom left right*/
         inset: 0 0 0 20%;        
-        background-color: black;
         padding: min(20rem, 10vh) 2rem;
         flex-direction: column;
     }
