@@ -293,12 +293,28 @@ input, button, textarea, select{
     transform: scale(1.5);
 }
 
-.primary-navigation{
-    --gap: 8rem;
+.primary-navigation {
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+@media (max-width: 35rem) {
+    .primary-navigation {
+        --underline-gap: .5rem;
+        position: fixed;
+        z-index: 1000;
+        /*short for top bottom left right*/
+        inset: 0 0 0 20%;        
+        background-color: black;
+        padding: min(20rem, 10vh) 2rem;
+        flex-direction: column;
+    }
+
+    .primary-navigation.underline-indicators > .active{
+        border: 0;
+    }
 }
 
 .primary-navigation a{
