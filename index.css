@@ -685,3 +685,13 @@ body{
         align-self: flex-end;
     }
 }
+
+
+/* [role="tab"]:focus{
+    color: green;
+} */
+
+picture[hidden] {
+    visibility:hidden;
+    display: none;
+}
