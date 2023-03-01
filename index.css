@@ -630,10 +630,7 @@ body{
 }
 
 /* Technology layout */
-.grid-container--technology {
-    --padding-inline: 0rem;
-    /* --flow-space: 4rem; */
-    place-content: start;
+.grid-container--technology {    
     grid-template-areas:
         'title'
         'image'
@@ -648,11 +645,6 @@ body{
 
 .grid-container--technology > .number-indicators {
     grid-area: tabs;
-}
-
-.grid-container--technology > .technology-details,
-.grid-container--technology> .numbered-title {
-    padding-inline: 1rem;
 }
 
 .grid-container--technology > .technology-details {
@@ -676,6 +668,16 @@ body{
             'content'
             'tabs'
             'image';
+    }
+
+    .grid-container--technology {
+        --padding-inline: 0rem;
+        place-content: start;
+    }
+
+    .grid-container--technology>.technology-details,
+    .grid-container--technology>.numbered-title {
+        padding-inline: 1rem;
     }
 
     .grid-container--technology>.number-indicators {
@@ -723,20 +725,55 @@ body{
         justify-content: start;
     }
 
-        .grid-container--crew {
-            grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
-            justify-items: start;
-            grid-template-areas:
-                '. title title .'
-                '. content image .'
-                '. tabs image .';
-        }
+    .grid-container--crew {
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+        justify-items: start;
+        grid-template-areas:
+            '. title title .'
+            '. content image .'
+            '. tabs image .';
+    }
+
+    .grid-container--crew>picture {
+        grid-column: span 2;
+        align-self: end;
+        max-width: 100%;
+    }
+
+    .grid-container--technology {        
+        grid-template-columns: minmax(2rem, 1fr) minmax(0, 34rem) minmax(0, 23rem) minmax(1rem, 1fr);
+        justify-items: start;
+        grid-template-areas:
+            'title title . .'
+            'tabs content . image'
+            /* '. tabs'; */
+    }
+
+    .grid-container--technology>picture {
+        grid-column: span 2;
+        justify-self: flex-end;
+        position: relative;
+        right: -1rem;
+        /* max-width: 80%; */
+    }
+
+    .grid-container--technology>.number-indicators {
+        justify-self: flex-end;
+    }
     
-        .grid-container--crew>picture {
-            grid-column: span 2;
-            align-self: end;
-            max-width: 100%;
-        }
+    .grid-container--technology>.numbered-title {
+        /* grid-column: span 2; */
+        padding-inline-start: max(2vw, 7rem);
+    }
+
+    /* 
+
+    .grid-container--technology>.technology-details,
+    */
+
+    .grid-container--technology>.technology-details {
+        justify-self: flex-end;
+    }
 }
 
 picture[hidden] {
