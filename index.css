@@ -54,6 +54,7 @@
 *::before,
 *::after{
     box-sizing: border-box;
+    scrollbar-gutter: stable both-edges;
 }
 
 
@@ -561,7 +562,8 @@ body{
 
 .grid-container--destination > picture {
     grid-area: image;
-    max-width: 60%;    
+    max-width: 60%;
+    align-self: flex-start;
 }
 
 .grid-container--destination > .tab-list {
@@ -660,8 +662,7 @@ body{
             '. image content .';
     }
 
-    .grid-container--destination > picture,
-    .grid-container--crew > picture {
+    .grid-container--destination > picture {
         max-width: 90%;
     }
 
@@ -670,20 +671,20 @@ body{
         justify-content: start;
     }
 
-    .grid-container--crew {
-        grid-template-areas:
-            '. title title .'
-            '. content image .'
-            '. tabs image . '
-    }
-
-    .grid-container--crew > .dot-indicators {
-        justify-self: flex-start;
-    }
-
-    .grid-container--crew > picture {
-        align-self: flex-end;
-    }
+        .grid-container--crew {
+            grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+            justify-items: start;
+            grid-template-areas:
+                '. title title .'
+                '. content image .'
+                '. tabs image .';
+        }
+    
+        .grid-container--crew>picture {
+            grid-column: span 2;
+            align-self: end;
+            max-width: 100%;
+        }
 }
 
 
