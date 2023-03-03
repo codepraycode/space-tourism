@@ -2,7 +2,7 @@ const nav =  document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 
 //  When the hamburger is clicked
-navToggle.addEventListener("click", toggleSidebar);
+navToggle.addEventListener("click", ()=>toggleSidebar(null));
 
 document.getElementById("main").addEventListener("click", ()=>toggleSidebar(false));
 
